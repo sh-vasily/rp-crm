@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTask"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="WPF Задание" Height="350" Width="525">
     <Grid>
-        <TextBlock>Ромашка и партнёры</TextBlock>
+        <TabControl TabStripPlacement="Bottom">
+            <TabItem Header="Компании">
+                <GroupBox Header="Группа элементов" Margin="5" Padding="5">
+                    <StackPanel>
+                        <CheckBox>Один</CheckBox>
+                        <CheckBox Margin="0,5,0,5">Два</CheckBox>
+                        <CheckBox>Три</CheckBox>
+                        <Button HorizontalAlignment="Center" Padding="5">Ok</Button>
+                    </StackPanel>
+                </GroupBox>
+            </TabItem>
+            <TabItem Header="Пользователи">
+                Пользователи
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
