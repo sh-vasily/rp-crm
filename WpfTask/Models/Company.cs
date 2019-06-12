@@ -12,6 +12,11 @@
 
         #region Constructor
 
+        public Company()
+        {
+
+        }
+
         public Company(int _id, string _name, string _contructStatus)
         {
             Id = _id;

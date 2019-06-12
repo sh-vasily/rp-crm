@@ -9,14 +9,24 @@
     <Grid>
         <TabControl TabStripPlacement="Bottom">
             <TabItem Header="Компании">
-                <GroupBox Header="Группа элементов" Margin="5" Padding="5">
-                    <StackPanel>
-                        <CheckBox>Один</CheckBox>
-                        <CheckBox Margin="0,5,0,5">Два</CheckBox>
-                        <CheckBox>Три</CheckBox>
-                        <Button HorizontalAlignment="Center" Padding="5">Ok</Button>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <DataGrid AutoGenerateColumns="False" x:Name="companysGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="110"/>
+                            <DataGridTextColumn Binding="{Binding ContructStatus}" Header="Статус контракта" Width="1000"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+                        <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
+                        <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
                     </StackPanel>
-                </GroupBox>
+                </Grid>
             </TabItem>
             <TabItem Header="Пользователи">
                 Пользователи
