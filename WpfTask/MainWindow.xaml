@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTask"
         mc:Ignorable="d"
-        Title="WPF Задание" Height="350" Width="525">
+        Title="WPF Задание" Height="350" Width="525" ResizeMode="NoResize">
     <Grid>
         <TabControl TabStripPlacement="Bottom">
             <TabItem Header="Компании">
@@ -17,12 +17,13 @@
                     <DataGrid AutoGenerateColumns="False" x:Name="companysGrid">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="100"/>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="110"/>
-                            <DataGridTextColumn Binding="{Binding ContractStatus}" Header="Статус контракта" Width="1000"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding ContractStatus}" Header="Статус контракта" Width="140"/>
                         </DataGrid.Columns>
                     </DataGrid>
 
                     <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+                        <Button x:Name="addButton" Content="Добавить" Click="addButton_Click" />
                         <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
                         <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
                     </StackPanel>

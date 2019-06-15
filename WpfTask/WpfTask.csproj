@@ -133,6 +133,9 @@
     <Compile Include="Company.cs">
       <DependentUpon>DbTestModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CompanyDialog.xaml.cs">
+      <DependentUpon>CompanyDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DbTestModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,6 +144,10 @@
     <Compile Include="User_Compamy.cs">
       <DependentUpon>DbTestModel.tt</DependentUpon>
     </Compile>
+    <Page Include="CompanyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

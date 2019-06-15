@@ -26,6 +26,13 @@ namespace WpfTask
             dBContex.Dispose();
         }
 
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        { 
+           var cmpdlg = new CompanyDialog();
+            cmpdlg.ShowDialog();
+            
+        }
+
         private void updateButton_Click(object sender, RoutedEventArgs e)
         {
             dBContex.Company.Load();
@@ -50,5 +57,9 @@ namespace WpfTask
             dBContex.SaveChanges();
         }
 
+        private void deleteButton_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
