@@ -18,7 +18,7 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="100"/>
                             <DataGridTextColumn Binding="{Binding Name}" Header="Название" Width="110"/>
-                            <DataGridTextColumn Binding="{Binding ContructStatus}" Header="Статус контракта" Width="1000"/>
+                            <DataGridTextColumn Binding="{Binding ContractStatus}" Header="Статус контракта" Width="1000"/>
                         </DataGrid.Columns>
                     </DataGrid>
 
