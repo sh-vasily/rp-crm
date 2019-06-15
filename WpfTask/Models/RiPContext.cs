@@ -4,7 +4,7 @@ namespace WpfTask.Models
 {
     class RiPContext : DbContext
     {
-        public RiPContext() : base("DefaultContext")
+        public RiPContext() : base("DefaultConnection")
         {
 
         }

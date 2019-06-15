@@ -37,10 +37,10 @@ namespace WpfTask
             {
                 for (int i = 0; i < companysGrid.SelectedItems.Count; i++)
                 {
-                    var phone = companysGrid.SelectedItems[i] as Company;
-                    if (phone != null)
+                    var company = companysGrid.SelectedItems[i] as Company;
+                    if (company != null)
                     {
-                        db.Companys.Remove(phone);
+                        db.Companys.Remove(company);
                     }
                 }
             }
