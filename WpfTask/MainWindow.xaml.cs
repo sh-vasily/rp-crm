@@ -38,7 +38,7 @@ namespace WpfTask
 
                 if (company != null)
                 {
-                    var selected_company = dBContex.Company.Find(company.Id);
+                    var selected_company = dBContex.Company; //Find(company.Id);
 
                     MessageBox.Show(selected_company.ToString());
                 }
