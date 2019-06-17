@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Linq;
 using System.Windows;
 
 namespace WpfTask
@@ -29,52 +30,54 @@ namespace WpfTask
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
-            //var cmpdlg = new CompanyDialog();
-            // cmpdlg.ShowDialog();
-
             if (companysGrid.SelectedItems.Count == 1)
             {
                 var company = companysGrid.SelectedItems[0] as Company;
 
                 if (company != null)
                 {
-                    var selected_company = dBContex.Company; //Find(company.Id);
+                    var selected_company = dBContex.Company.FirstOrDefault(c => c.Id == company.Id);
+                    
+                    if(selected_company is null)
+                    {
+                        if (company.Name is null)
+                        {
+                            MessageBox.Show("Введите название компании");
+                        }
+                        else if (company.ContractStatus is null)
+                        {
+                            MessageBox.Show("Введите статус контракта с компанией");
+                        }
+                        else
+                        {
+                            dBContex.Company.Add(company);
+                            dBContex.SaveChanges();
 
-                    MessageBox.Show(selected_company.ToString());
+                            MessageBox.Show($"Запись : {company.ToString()} \nуспешно добавлена в базу данных");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Запись с таким Id уже содержится в базе данных");
+                    }
                 }
-
-                
-
-                /*MessageBox.Show($"{company is null}");                
-                
-                try
+                else
                 {
-                    selected_company = dBContex.Company.Find(company.Id);
+                    MessageBox.Show("Невозможно добавить пустую запись");
                 }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Ошибка");
-                }*/
-               // if (dBContex.Company.Find(company)!= null)
-               // {
-               //    MessageBox.Show("Yes");
-               // }
-
-                //if (from c in dBContex.Compan c ==  company)
-
-                //dBContex.Company.Add(companysGrid.SelectedItems[0] as Company);
-                //dBContex.SaveChanges();
-                /*
-                var company = companysGrid.SelectedItems[0] as Company;
-                if (company != null)
-                {
-                    dBContex.Company.Remove(company);
-                }*/
             }
-
-
-             //   dBContex.SaveChanges();
-
+            else
+            {
+                switch(companysGrid.SelectedItems.Count)
+                {
+                    case 0:
+                        MessageBox.Show("Выберите запсиь для добавления");
+                        break;
+                    default:
+                        MessageBox.Show("Выберите только одну запсиь для добавления");
+                        break;
+                }
+            }
         }
 
         private void updateButton_Click(object sender, RoutedEventArgs e)
@@ -97,11 +100,6 @@ namespace WpfTask
                 }
             }
             dBContex.SaveChanges();
-        }
-
-        private void deleteButton_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
