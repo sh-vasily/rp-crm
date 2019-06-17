@@ -30,7 +30,24 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Пользователи">
-                Пользователи
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <DataGrid AutoGenerateColumns="False" x:Name="usersGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="Id" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding Id_Company}" Header="Id компании" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding User_Login}" Header="Логин" Width="*"/>
+                            <DataGridTextColumn Binding="{Binding User_Password}" Header="Пароль" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+        
+                    </StackPanel>
+               </Grid>
             </TabItem>
         </TabControl>
     </Grid>
