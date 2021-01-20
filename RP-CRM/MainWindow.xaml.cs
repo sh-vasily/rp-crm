@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfTask
+namespace RP_CRM
 {
     /// <summary>
-    /// Логика взаимодействия для CompanyDialog.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class CompanyDialog : Window
+    public partial class MainWindow : Window
     {
-        public CompanyDialog()
+        public MainWindow()
         {
             InitializeComponent();
         }
     }
 }
-    
