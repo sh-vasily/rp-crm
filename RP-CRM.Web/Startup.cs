@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RP_CRM.Web.Data;
 
 namespace RP_CRM.Web
 {
@@ -28,7 +27,7 @@ namespace RP_CRM.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<IInMemoryCompaniesRepository, InMemoryCompaniesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
