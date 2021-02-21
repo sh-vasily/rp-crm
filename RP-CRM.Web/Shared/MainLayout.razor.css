@@ -1,3 +1,28 @@
+.app-wrapper{
+    display: grid;
+    grid-template-columns: 180px auto;
+    grid-template-rows: auto auto;
+    row-gap: 100px;
+}
+
+.logo-item{
+    grid-column: 1 /  2;
+    grid-row: 1 / 2;
+    align-items: center;
+    background: #cde1ff;
+}
+
+.header-item{
+    grid-column: 2 / 2;
+    grid-row: 1 / 2;
+    background: #cde1ff;
+}
+
+.body-item{
+    grid-column: 1 / span 2;
+    grid-row: 2 / 2;
+}
+
 .page {
     position: relative;
     display: flex;
